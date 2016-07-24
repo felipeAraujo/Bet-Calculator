@@ -9,5 +9,5 @@ Why it doesn't work with sports when there is no draw?
 Because the decimal odds of this sport was made to not profit the player that work this way, you can look for,
 but you will not find odds that fits in this calculation.
 
-Why it was designated?
+For Whom it was designated?
 For people who wants to profit in more security way, altough they will have less profit if bet in the exact result
