@@ -11,4 +11,4 @@ but you will not find odds that fits in this calculation.
 
 
 ## For Whom it was designated?
-For people who wants to profit in more security way, altough they will have less profit if bet in the exact result
+For people who wants to profit in more security way, altough they will have more profit if bet in the exact result
