@@ -1,13 +1,15 @@
 # -*- coding: UTF-8 -*-
 
+from decimal import *
+
 class Bet_Calculator(object):
 
     def __init__(self, decimal_team1_house1=0.0, decimal_team1_house2=0.0, decimal_team2_house1=0.0, decimal_team2_house2=0.0, cash_to_bet=0.0):
-        self._decimal_team1_house1 = decimal_team1_house1
-        self._decimal_team1_house2 = decimal_team1_house2
-        self._decimal_team2_house1 = decimal_team2_house1
-        self._decimal_team2_house2 = decimal_team2_house2
-        self._cash_to_bet = cash_to_bet
+        self._decimal_team1_house1 = Decimal(decimal_team1_house1)
+        self._decimal_team1_house2 = Decimal(decimal_team1_house2)
+        self._decimal_team2_house1 = Decimal(decimal_team2_house1)
+        self._decimal_team2_house2 = Decimal(decimal_team2_house2)
+        self._cash_to_bet = Decimal(cash_to_bet)
 
     @property
     def cash_to_bet(self):
@@ -15,7 +17,7 @@ class Bet_Calculator(object):
 
     @cash_to_bet.setter
     def cash_to_bet(self, value):
-        self._cash_to_bet = value
+        self._cash_to_bet = Decimal(value)
 
     @property
     def decimal_team1_house1(self):
@@ -67,14 +69,14 @@ class Bet_Calculator(object):
 
     @property
     def can_bet_team1_house1(self):
-        if (self._decimal_team1_house1 != 0) and (self._decimal_team2_house2 != 0) :
+        if (self._decimal_team1_house1 != Decimal('0') ) and (self._decimal_team2_house2 != Decimal('0') ) :
             return self._decimals_generate_profit(self._decimal_team1_house1, self._decimal_team2_house2)
         else:
             return False
 
     @property
     def can_bet_team1_house2(self):
-        if (self._decimal_team1_house2 != 0) and (self._decimal_team2_house1 != 0) :
+        if (self._decimal_team1_house2 != Decimal('0') ) and (self._decimal_team2_house1 != Decimal('0') ) :
             return self._decimals_generate_profit(self._decimal_team1_house2, self._decimal_team2_house1)
         else:
             return False
@@ -86,13 +88,14 @@ class Bet_Calculator(object):
             return False
 
     def _get_decimal(self, value):
+        value = Decimal(value)
         if value > 1:
             return value
         else:
             return 0
 
     def _get_decimal_profit_of_bet(self, odd):
-        profit = odd - 1
+        profit = Decimal(odd) - Decimal('1')
         if profit > 0:
             return profit
         else:
