@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
+
+# Obs: Need to install pygtk on windows
 import pygtk
 pygtk.require("2.0") #Essa linha define a versão do pygtk a ser importado
 import gtk
@@ -258,7 +260,7 @@ class Vision(object):
 
             valor_proporcao = proporcao*diferenca
 
-            valor_time1 = minimo_valor_time1 = minimo_valor_time1+valor_proporcao
+            valor_time1 = minimo_valor_time1+valor_proporcao
             valor_time2 = self.calculador_de_aposta.cash_to_bet - valor_time1
             self.txValorTime1.set_text(("%.2f" % valor_time1))
             self.txValorTime2.set_text(("%.2f" % valor_time2))
